@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.header {
+    background-color: #F4F4F4;
+    padding: 20px;
+    text-align: center;
+}
+
+.header__logo img {
+    width: 150px;
+}
+
+.product-section {
+    position: relative;
+    max-width: 1200px;
+    margin: 20px auto;
+    height: 500px;
+    overflow: hidden;
+}
+
+.product-section__image {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-section__content {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translateY(-50%);
+    color: #fff;
+    padding: 20px;
+    max-width: 400px;
+}
+
+.product-section__title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.product-section__description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.product-section__button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.product-section__button:hover {
+    background-color: #218838;
+}
+
+.video-section {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+.video-section h2 {
+    font-size: 2rem;
+    width: 350px;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+.video-section__video {
+    width: 400px;
+    height: auto;
+    border: 2px solid #333;
+}
+
+.product-section2 {
+    width: 1200px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.product-section__image2 {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    margin: auto;
+    object-fit: cover;
+}
+
+.footer {
+    background-color: #F4F4F4;
+    padding: 20px;
+    text-align: center;
+    color: #000;
+}
+
+.footer__copyright {
+    font-size: 1rem;
+}
