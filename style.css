@@ -80,8 +80,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: auto;
-    width: 100%;
 }
 
 .video-section h2 {
@@ -90,10 +88,54 @@ body {
     text-transform: uppercase;
     font-weight: bolder;
 }
+
+.video-container {
+    position: relative; /* Position relative for absolute positioning of the button */
+}
+
 .video-section__video {
     width: 400px;
     height: 500px;
     border: 2px solid #333;
+    display: block;
+}
+
+.play-button {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    animation: pulse 1s infinite; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-button:hover {
+    background-color: #444;
+    text-align: center;
+}
+
+.img-play {
+    color: #fff;
+    width: 20px;
+}
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1); 
+    }
 }
 
 .product-section2 {
@@ -124,6 +166,23 @@ body {
 }
 
 @media (max-width: 450px) {
+
+    .play-button {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: black;
+        color: white;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        animation: pulse 1s infinite; 
+    }
+    
     .video-section h2 {
         font-size: 1.5rem;
         width: 300px;
@@ -140,7 +199,6 @@ body {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        margin: auto;
     }
 
     .video-section__video {
@@ -148,4 +206,9 @@ body {
         height: 500px;
         border: 2px solid #333;
     }
+
+    .play-button {
+        font-size: 1rem; 
+    }
 }
+    

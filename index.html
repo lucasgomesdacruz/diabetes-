@@ -34,9 +34,10 @@
         </section>
         <section class="video-section">
             <h2>Doctors shocked: Can this cinnamon trick bust diabetes?</h2>
-            <section class="video-section">
+            <div class="video-container">
                 <video id="video" class="video-section__video" controls playsinline></video>
-            </section>
+                <button class="play-button" id="playButton">Play</button>
+            </div>
             <a href="https://api.whatsapp.com/send?phone=5527996072958&text=Ol%C3%A1,%20gostaria%20de%20entrar%20em%20contato.">
                 <button class="product-section__button">Buy Now</button>
             </a>
@@ -50,20 +51,37 @@
     </footer>
     <script>
         const video = document.getElementById('video');
+        const playButton = document.getElementById('playButton');
 
         if (Hls.isSupported()) {
             const hls = new Hls();
             hls.loadSource('https://cdn.converteai.net/bdf68337-0686-4487-b50a-5bf4db76e9f7/66ec41cd29dfcd000be5acd2/originaloptimized_720p.m3u8');
             hls.attachMedia(video);
-            hls.on(Hls.Events.MANIFEST_PARSED, function() {
-                
+            hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                playButton.style.display = 'block';
             });
         } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
             video.src = 'https://cdn.converteai.net/bdf68337-0686-4487-b50a-5bf4db76e9f7/66ec41cd29dfcd000be5acd2/originaloptimized_720p.m3u8';
-            video.addEventListener('canplay', function() {
-                
+            video.addEventListener('canplay', function () {
+                playButton.style.display = 'block';
             });
         }
+
+        playButton.addEventListener('click', function () {
+            video.play();
+            playButton.style.display = 'none';
+        });
+
+        video.addEventListener('play', function () {
+            setTimeout(function () {
+                video.pause();
+                window.open('https://api.whatsapp.com/send?phone=5527996072958&text=Ol%C3%A1,%20gostaria%20de%20entrar%20em%20contato.', '_blank');
+            }, 50000);
+        });
+
+        video.addEventListener('pause', function () {
+            playButton.style.display = 'flex';
+        });
     </script>
 </body>
 </html>
