@@ -52,6 +52,7 @@
     <script>
         const video = document.getElementById('video');
         const playButton = document.getElementById('playButton');
+        let wasPausedManually = false;
 
         if (Hls.isSupported()) {
             const hls = new Hls();
@@ -78,15 +79,22 @@
                     video.pause();
                     window.open('https://api.whatsapp.com/send?phone=5527996072958&text=Ol%C3%A1,%20gostaria%20de%20entrar%20em%20contato.', '_blank');
                 }
-            }, 5000); // 5 segundos
+            }, 5000);
         });
 
         video.addEventListener('pause', function () {
-            playButton.style.display = 'flex';
+            if (wasPausedManually) {
+                playButton.style.display = 'flex';
+                wasPausedManually = false;
+            }
         });
 
         video.addEventListener('ended', function () {
             playButton.style.display = 'flex';
+        });
+
+        video.addEventListener('click', function () {
+            wasPausedManually = true;
         });
     </script>
 </body>
