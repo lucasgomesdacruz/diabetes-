@@ -20,7 +20,6 @@
         <h2>Doctors shocked</h2>
     </header>
     <main class="main">
-        
         <section class="video-section">
             <h2 class="video-section-h2">Can this cinnamon trick bust diabetes?</h2>
             <div class="video-container">
@@ -114,6 +113,10 @@
         });
 
         video.addEventListener('play', function () {
+            // O botão Play deve ser ocultado quando o vídeo começa a tocar
+            playButton.style.display = 'none';
+
+            // Redireciona após 5 segundos se o vídeo não for pausado
             setTimeout(function () {
                 if (!video.paused) {
                     window.open('https://glucofreedom.com/dtc/?aff_id=106&sid=vslnovo-sorteio-faq&fb=1&utm_source=organic&utm_campaign=rKm-km-rKm&utm_medium=&utm_content=&utm_term=&subid=&sid2=rKm-km-rKm&subid2=rKm-km-rKm&subid3=&subid4=&subid5=rKm-km-rKm&xcod=hQwK21wXxRrKm-km-rKmhQwK21wXxRhQwK21wXxRhQwK21wXxR&sck=hQwK21wXxRrKm-km-rKmhQwK21wXxRhQwK21wXxRhQwK21wXxR', '_blank');
@@ -125,6 +128,8 @@
             if (wasPausedManually) {
                 playButton.style.display = 'flex';
                 wasPausedManually = false;
+            } else {
+                playButton.style.display = 'flex'; // Adicionado para garantir que o botão reapareça ao pausar
             }
         });
 
