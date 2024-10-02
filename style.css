@@ -8,7 +8,7 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: #93B59D;
 }
 
 .header {
@@ -39,6 +39,7 @@ body {
     line-height: 45px;
     text-align: center;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .video-container {
