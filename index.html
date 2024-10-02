@@ -14,6 +14,31 @@
 
     <title>Diabetes</title>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <style>
+        .iframe-container {
+            width: 100%; /* Largura máxima do iframe */
+            margin: 20px auto; /* Centraliza o iframe na página */
+        }
+        iframe {
+            width: 100%; /* O iframe ocupará 100% da largura da div */
+            height: 1000px; /* Altura fixa do iframe */
+            border: none; /* Remove a borda do iframe */
+            margin: 0 auto;
+            display: flex;
+        }
+        .play-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 10px auto;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -25,6 +50,9 @@
             <div class="video-container">
                 <video id="video" class="video-section__video" controls playsinline></video>
                 <button class="play-button" id="playButton"><h2>Play</h2></button>
+            </div>
+            <div class="iframe-container" style="display: none;">
+                <iframe src=""></iframe>
             </div>
         </section>
         <section>
@@ -110,16 +138,22 @@
         playButton.addEventListener('click', function () {
             video.play();
             playButton.style.display = 'none';
+            
+            // Mudar o texto do botão para "Buy Now"
+            playButton.innerHTML = '<h2>Buy Now</h2>';
         });
 
         video.addEventListener('play', function () {
             // O botão Play deve ser ocultado quando o vídeo começa a tocar
             playButton.style.display = 'none';
 
-            // Redireciona após 5 segundos se o vídeo não for pausado
+            // Exibe o iframe após 5 segundos
             setTimeout(function () {
                 if (!video.paused) {
-                    window.open('https://glucofreedom.com/dtc/?aff_id=106&sid=vslnovo-sorteio-faq&fb=1&utm_source=organic&utm_campaign=rKm-km-rKm&utm_medium=&utm_content=&utm_term=&subid=&sid2=rKm-km-rKm&subid2=rKm-km-rKm&subid3=&subid4=&subid5=rKm-km-rKm&xcod=hQwK21wXxRrKm-km-rKmhQwK21wXxRhQwK21wXxRhQwK21wXxR&sck=hQwK21wXxRrKm-km-rKmhQwK21wXxRhQwK21wXxRhQwK21wXxR', '_blank');
+                    const iframeContainer = document.querySelector('.iframe-container');
+                    const iframe = iframeContainer.querySelector('iframe');
+                    iframe.src = 'https://glucofreedom.com/dtc/?aff_id=106&sid=vslnovo-sorteio-faq&fb=1&utm_source=organic&utm_campaign=rKm-km-rKm&utm_medium=&utm_content=&utm_term=&subid=&sid2=rKm-km-rKm&subid2=rKm-km-rKm&subid3=&subid4=&subid5=rKm-km-rKm&xcod=hQwK21wXxRrKm-km-rKmhQwK21wXxRhQwK21wXxRhQwK21wXxR&sck=hQwK21wXxRrKm-km-rKmhQwK21wXxRhQwK21wXxRhQwK21wXxR';
+                    iframeContainer.style.display = 'block';
                 }
             }, 5000);
         });
