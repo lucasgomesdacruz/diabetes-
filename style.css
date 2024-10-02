@@ -12,69 +12,18 @@ body {
 }
 
 .header {
-    background-color: #F4F4F4;
-    padding: 20px;
+    background-color: #93B59D;
     text-align: center;
+    color: white;
 }
 
-.header__logo img {
-    width: 150px;
+.main {
+    background-color: #93B59D;
 }
-
-/* .product-section {
-    position: relative;
-    max-width: 1200px;
-    margin: 20px auto;
-    height: 500px;
-    overflow: hidden;
-}
-
-.product-section__image {
-    width: 100%;
-    max-width: 1200px;
-    height: 100%;
-    object-fit: cover;
-}
-
-.product-section__content {
-    position: absolute;
-    top: 50%;
-    left: 20%;
-    transform: translateY(-50%);
-    color: #fff;
-    padding: 20px;
-    max-width: 400px;
-}
-
-.product-section__title {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.product-section__description {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-.product-section__button {
-    padding: 10px 20px;
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-    border-radius: 5px;
-}
-
-.product-section__button:hover {
-    background-color: #218838;
-} */
 
 .video-section {
-    padding: 20px;
-    background-color: #fff;
-    margin: 20px auto;
+    background-color: transparent;
+    margin: 0px auto;
     max-width: 1200px;
     display: flex;
     justify-content: center;
@@ -83,20 +32,23 @@ body {
 }
 
 .video-section h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     width: 350px;
-    text-transform: uppercase;
     font-weight: bolder;
+    color: white;
+    line-height: 45px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .video-container {
-    position: relative; /* Position relative for absolute positioning of the button */
+    position: relative; 
 }
 
 .video-section__video {
     width: 400px;
     height: 500px;
-    border: 2px solid #333;
+    border: 1px solid #fff;
     display: block;
 }
 
@@ -111,24 +63,21 @@ body {
     background-color: black;
     color: white;
     border: none;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     cursor: pointer;
     animation: pulse 1s infinite; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    transition: 1s all;
+    text-transform: uppercase;
 }
 
 .play-button:hover {
-    background-color: #444;
+    background-color: green;
     text-align: center;
 }
 
-.img-play {
-    color: #fff;
-    width: 20px;
-}
+
+
+
 @keyframes pulse {
     0%, 100% {
         transform: translate(-50%, -50%) scale(1);
@@ -154,11 +103,132 @@ body {
     object-fit: cover;
 }
 
+.comment-section {
+    width: 50%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.comment-section h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.comment {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.comment-user {
+    background-color: #EAEBEF;
+    border-radius: 20px;
+    padding: 5px 5px 5px 15px;
+}
+
+.user-info span {
+    font-weight: bold;
+}
+
+.comment p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.actions {
+    font-size: 12px;
+    color: #666;
+    cursor: pointer;
+}
+
+.actions .likes {
+    margin-left: 20px;
+    color: #0d6efd;
+}
+
+.reply {
+    margin-left: 50px;
+}
+
+.footer-comments {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    background-color: #4080FF;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .comment-section {
+        width: 90%;
+    }
+
+    .user-info img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .actions {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .comment-section {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .user-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .user-info img {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 5px;
+    }
+
+    .actions {
+        font-size: 9px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .comment p {
+        font-size: 12px;
+    }
+}
+
+
+
 .footer {
-    background-color: #F4F4F4;
+    background-color: #343A40;
     padding: 20px;
     text-align: center;
-    color: #000;
+    color: #fff;
+    font-weight: 500;
 }
 
 .footer__copyright {
